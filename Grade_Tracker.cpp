@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// Structure to hold student information
 struct Student
 {
     string name;
@@ -17,7 +16,7 @@ struct Student
     double overallGrade;
 };
 
-// Function to calculate the overall grade for a student
+// Calculate the overall grade for a student
 double calculateOverallGrade(const vector<double> &assignmentGrades, const vector<double> &examGrades)
 {
     double assignmentAverage = accumulate(assignmentGrades.begin(), assignmentGrades.end(), 0.0) / assignmentGrades.size();
@@ -25,12 +24,11 @@ double calculateOverallGrade(const vector<double> &assignmentGrades, const vecto
     return (assignmentAverage * 0.4) + (examAverage * 0.6);
 }
 
-// Function to input data for a new student
+// Get data of a new student
 void getStudentData(vector<Student> &students)
 {
     Student student;
 
-    // Get student name and ID
     cout << "Enter student name: ";
     cin.ignore();
     getline(cin, student.name);
